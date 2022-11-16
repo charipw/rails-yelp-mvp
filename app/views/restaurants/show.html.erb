@@ -1,0 +1,32 @@
+  <p>
+    <strong><%= @restaurant.name %></strong>
+
+  </p>
+
+  <p>Address:
+    <%= @restaurant.address %>
+  </p>
+
+  <p>Phone number:
+    <%= @restaurant.phone_number %>
+  </p>
+
+  <p>Category:
+    <%= @restaurant.category %>
+  </p>
+
+  <p><strong>Reviews</strong></p>
+  <ul class="list-group">
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item">
+      <%= review.content %>
+      <%= review.rating %></li>
+    <% end %>
+  </ul>
+<br>
+
+
+</div>
+
+<p><%= link_to "Back to all restaurants", restaurants_path  %></p>
+<%= link_to "Write a new review", restaurant_new_review_path(@restaurant) %>
